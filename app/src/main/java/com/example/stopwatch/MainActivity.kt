@@ -19,6 +19,7 @@ import com.example.stopwatch.ui.theme.SecondaryDark
 import com.example.stopwatch.ui.theme.StopWatchTheme
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -28,7 +29,7 @@ class MainActivity : ComponentActivity() {
                         .fillMaxHeight()
                         .background(SecondaryDark)
                 ){
-                    StopWatchScreen(stopWatchViewModel = StopWatchViewModel())
+                    StopWatchScreen((application as StopWatchApplication).stopWatchViewModel)
                 }
             }
         }
